@@ -51,11 +51,74 @@ function renderLicenseSection(license) {
   }
 }
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+// Functions to generate markdown for README
 
-`;
+function renderTitle(title) { // title
+  return `# ${title} \n`;
+}
+
+function renderDescription(description) { // description
+  return `## Description \n`+
+    `${description} \n`;
+}
+
+function renderTableOfContents(license) { // table of contents
+  let licenseTemplate;
+  // If "no license" was selected, this section is excluded from the table of contents
+  switch (license) {
+    case "No License":
+      licenseTemplate = "";
+      break;
+    default:
+      licenseTemplate = `* [License](#license) \n`;
+  }
+
+  return `## Table of Contents \n`+
+    `* [Installation](#installation) \n`+
+    `* [Usage](#usage) \n`+
+    licenseTemplate +
+    `* [Contributing](#contributing) \n`+
+    `* [Tests](#tests) \n`+
+    `* [Questions](#questions) \n`;
+}
+
+function renderInstallation(install) { // installation
+  return `## Installation \n`+
+    `${install} \n`;
+}
+
+function renderUsage(usage) { // usage
+  return `## Usage \n`+
+    `${usage} \n`;
+}
+
+function renderContributing(contribute) { // contributions
+  return `## Contributing \n`+
+    `${contribute} \n`;
+}
+
+function renderTests(tests) { // tests
+  return `## Tests \n`+
+    `${tests} \n`;
+}
+
+function renderQuestions(username, email) { //github and email
+  return `## Questions \n`+
+    `${username} [GitHub Profile](https://github.com/${username}) \n\n`+
+    `Feel free to email me at ${email} \n`;
+}
+
+function generateMarkdown(data) {
+  return `${renderTitle(data.title)} \n`+
+    `${renderLinkedLicenseBadge(data.license)}`+
+    `${renderDescription(data.description)} \n`+
+    `${renderTableOfContents(data.license)} \n`+
+    `${renderInstallation(data.installation)} \n`+
+    `${renderUsage(data.usage)} \n`+
+    `${renderLicenseSection(data.license)}`+
+    `${renderContributing(data.contribute)} \n`+
+    `${renderTests(data.tests)} \n`+
+    `${renderQuestions(data.username, data.email)}`;
 }
 
 module.exports = generateMarkdown;

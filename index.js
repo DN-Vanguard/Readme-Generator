@@ -35,7 +35,6 @@ const questions = [
         message: "What tests are associated with this project?",
         name: "tests"
     },
-    
     {
         type: "input",
         message: "Enter GitHub username:",
@@ -50,7 +49,7 @@ const questions = [
         type: "list",
         message: "Choose a license for your project from the following:",
         name: "license",
-        choices: ["No License","Apache 2.0","GNU","MIT","Mozilla"]
+        choices: ["No License","Apache 2.0","GNU","MIT"]
     }
 
 ];

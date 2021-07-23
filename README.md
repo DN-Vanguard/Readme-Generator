@@ -9,8 +9,7 @@ Since every README file are similar to one another, I created a foundation of 9 
 ![Example_readme](assets/Example_Readme.png)
 
 ## Walkthrough Video
-[![App_Walkthrough]({assets/Example_Readme.png})]({assets/Walkthrough.mp4} "App Walkthrough")
-
+https://youtu.be/YhJJ3mq4Ekg
 
 ## Example Generated README.md
 https://drive.google.com/file/d/132Khdc3ODkrzjqRmmymW4hVztzB3UN5S/view?usp=sharing
